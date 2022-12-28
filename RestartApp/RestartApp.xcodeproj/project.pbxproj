@@ -14,6 +14,9 @@
 		0ED82EA4295BD8DC004F1162 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0ED82EA3295BD8DC004F1162 /* Localizable.strings */; };
 		0ED82EA8295BDA48004F1162 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED82EA6295BDA48004F1162 /* XCAssets+Generated.swift */; };
 		0ED82EA9295BDA48004F1162 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED82EA7295BDA48004F1162 /* Strings+Generated.swift */; };
+		0ED82EAD295BE533004F1162 /* chimeup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0ED82EAB295BE533004F1162 /* chimeup.mp3 */; };
+		0ED82EAE295BE533004F1162 /* success.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0ED82EAC295BE533004F1162 /* success.m4a */; };
+		0ED82EB0295BE7BF004F1162 /* Files+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED82EAF295BE7BF004F1162 /* Files+Generated.swift */; };
 		A7C9C12009A3A8B614E7C2E1 /* Pods_RestartApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F34F7AFDE4CC9415C3D00E /* Pods_RestartApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +29,9 @@
 		0ED82EA3295BD8DC004F1162 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		0ED82EA6295BDA48004F1162 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		0ED82EA7295BDA48004F1162 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		0ED82EAB295BE533004F1162 /* chimeup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chimeup.mp3; sourceTree = "<group>"; };
+		0ED82EAC295BE533004F1162 /* success.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = success.m4a; sourceTree = "<group>"; };
+		0ED82EAF295BE7BF004F1162 /* Files+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Files+Generated.swift"; sourceTree = "<group>"; };
 		10D2F3F8432C306C984F872E /* Pods-RestartApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestartApp.release.xcconfig"; path = "Target Support Files/Pods-RestartApp/Pods-RestartApp.release.xcconfig"; sourceTree = "<group>"; };
 		63564FFAEB00D90D25DFC983 /* Pods-RestartApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestartApp.debug.xcconfig"; path = "Target Support Files/Pods-RestartApp/Pods-RestartApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C2F34F7AFDE4CC9415C3D00E /* Pods_RestartApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RestartApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +90,7 @@
 		0ED82EA2295BD8C4004F1162 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0ED82EAA295BE533004F1162 /* Sounds */,
 				0ED82E96295BD1DA004F1162 /* Assets.xcassets */,
 				0ED82EA3295BD8DC004F1162 /* Localizable.strings */,
 			);
@@ -93,10 +100,20 @@
 		0ED82EA5295BD8E8004F1162 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				0ED82EAF295BE7BF004F1162 /* Files+Generated.swift */,
 				0ED82EA7295BDA48004F1162 /* Strings+Generated.swift */,
 				0ED82EA6295BDA48004F1162 /* XCAssets+Generated.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		0ED82EAA295BE533004F1162 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				0ED82EAB295BE533004F1162 /* chimeup.mp3 */,
+				0ED82EAC295BE533004F1162 /* success.m4a */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		6F700762620C0E5CEEBB6594 /* Frameworks */ = {
@@ -176,6 +193,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ED82EAD295BE533004F1162 /* chimeup.mp3 in Resources */,
+				0ED82EAE295BE533004F1162 /* success.m4a in Resources */,
 				0ED82E9A295BD1DA004F1162 /* Preview Assets.xcassets in Resources */,
 				0ED82EA4295BD8DC004F1162 /* Localizable.strings in Resources */,
 				0ED82E97295BD1DA004F1162 /* Assets.xcassets in Resources */,
@@ -232,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ED82EB0295BE7BF004F1162 /* Files+Generated.swift in Sources */,
 				0ED82EA8295BDA48004F1162 /* XCAssets+Generated.swift in Sources */,
 				0ED82E95295BD1D8004F1162 /* ContentView.swift in Sources */,
 				0ED82EA9295BDA48004F1162 /* Strings+Generated.swift in Sources */,
