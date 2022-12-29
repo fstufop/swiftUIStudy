@@ -18,3 +18,12 @@ xcassets:
        params:
          forceProvidesNamespaces: true
        output: XCAssets+Generated.swift
+files:
+  inputs:
+    - Resources/Sounds
+  filter:
+    - .+\.mp3$
+    - .+\.m4a$
+  outputs:
+    templateName: structured-swift5
+    output: Files+Generated.swift
