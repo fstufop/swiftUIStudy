@@ -1,2 +1,9 @@
 //Commons
 "AppName" = "RestartApp";
+
+//User defaults
+"defaults.onboarding" = "onboarding";
+
+//Onboarding
+"onboarding.title.share" = "Share.";
+"onboarding.description" = "It's not how much we give but\nhow much love we put into giving.";
