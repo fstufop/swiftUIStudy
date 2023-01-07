@@ -33,7 +33,7 @@ struct OnboardingView: View {
                                 
                 //MARK: - Body
                 ZStack {
-                    CircleView(opacity: 0.2)
+                    CircleView(color: .white, opacity: 0.2)
                     Image(asset: Asset.Images.character1)
                         .resizable()
                         .scaledToFit()
@@ -51,7 +51,7 @@ struct OnboardingView: View {
                         .padding(8)
                     
                     //Button Text
-                    Text("Get Started")
+                    Text(Strings.Onboarding.buttonTitle)
                         .font(.system(.title3, design: .rounded))
                         .fontWeight(.heavy)
                         .foregroundColor(.white)
@@ -71,7 +71,7 @@ struct OnboardingView: View {
                             Circle()
                                 .fill(.black.opacity(0.15))
                                 .padding(8)
-                            Image(systemName: "chevron.right.2")
+                            Image(systemName: Strings.SystemImage.Chevron.Right.two)
                                 .font(.system(size: 24, weight: .bold))
                         }
                         .foregroundColor(.white)
