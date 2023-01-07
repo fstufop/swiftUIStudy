@@ -12,6 +12,19 @@ import Foundation
 internal enum Strings {
   /// RestartApp
   internal static let appName = Strings.tr("Localizable", "AppName", fallback: "RestartApp")
+  internal enum Defaults {
+    /// onboarding
+    internal static let onboarding = Strings.tr("Localizable", "defaults.onboarding", fallback: "onboarding")
+  }
+  internal enum Onboarding {
+    /// It's not how much we give but
+    /// how much love we put into giving.
+    internal static let description = Strings.tr("Localizable", "onboarding.description", fallback: "It's not how much we give but\nhow much love we put into giving.")
+    internal enum Title {
+      /// Share.
+      internal static let share = Strings.tr("Localizable", "onboarding.title.share", fallback: "Share.")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
