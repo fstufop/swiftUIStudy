@@ -11,11 +11,13 @@ struct ContentView: View {
     // MARK: - Properties
     @State private var isAnimating: Bool = false
     @State private var imageScale: CGFloat = 1
+    @State private var imageOffset: CGSize = .zero
     
     // MARK: - Methods
-    func tapAnimation(scale: CGFloat) {
+    func resetImagePosition() {
         withAnimation(.spring()) {
-            imageScale = scale
+            imageScale = 1
+            imageOffset = .zero
         }
     }
     
@@ -30,16 +32,33 @@ struct ContentView: View {
                     .padding()
                     .shadow(color: .black.opacity(0.2), radius: 12, x: 2, y: 2)
                     .opacity(isAnimating ? 1 : 0)
+                    .offset(x: imageOffset.width, y: imageOffset.height)
                     .scaleEffect(imageScale)
                 
                 // MARK: - TAP GESTURE
                     .onTapGesture(count: 2) {
                         if imageScale == 1 {
-                            tapAnimation(scale: 5)
+                            withAnimation {
+                                imageScale = 5
+                            }
                         } else {
-                            tapAnimation(scale: 1)
+                            resetImagePosition()
                         }
                     }
+                // MARK: - DRAG GESTURE
+                    .gesture(
+                        DragGesture()
+                            .onChanged { offset in
+                                withAnimation(.linear(duration: 1)) {
+                                    imageOffset = offset.translation
+                                }
+                            }
+                            .onEnded { _ in
+                                if imageScale <= 1 {
+                                    resetImagePosition()
+                                }
+                            }
+                    )
             }//: ZSTACK
             .navigationTitle(Strings.navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
