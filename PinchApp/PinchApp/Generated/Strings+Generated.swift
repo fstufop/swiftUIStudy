@@ -24,6 +24,14 @@ internal enum Strings {
       internal static let vertical = Strings.tr("Localizable", "arrow.two.vertical", fallback: "arrow.up.and.down")
     }
   }
+  internal enum Chevron {
+    internal enum Compact {
+      /// chevron.compact.left
+      internal static let `left` = Strings.tr("Localizable", "chevron.compact.left", fallback: "chevron.compact.left")
+      /// chevron.compact.right
+      internal static let `right` = Strings.tr("Localizable", "chevron.compact.right", fallback: "chevron.compact.right")
+    }
+  }
   internal enum Circle {
     /// circle.circle
     internal static let circle = Strings.tr("Localizable", "circle.circle", fallback: "circle.circle")
