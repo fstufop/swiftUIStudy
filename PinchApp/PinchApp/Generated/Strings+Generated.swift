@@ -24,9 +24,25 @@ internal enum Strings {
       internal static let vertical = Strings.tr("Localizable", "arrow.two.vertical", fallback: "arrow.up.and.down")
     }
   }
+  internal enum Chevron {
+    internal enum Compact {
+      /// chevron.compact.left
+      internal static let `left` = Strings.tr("Localizable", "chevron.compact.left", fallback: "chevron.compact.left")
+      /// chevron.compact.right
+      internal static let `right` = Strings.tr("Localizable", "chevron.compact.right", fallback: "chevron.compact.right")
+    }
+  }
   internal enum Circle {
     /// circle.circle
     internal static let circle = Strings.tr("Localizable", "circle.circle", fallback: "circle.circle")
+  }
+  internal enum Magnifyingglass {
+    /// minus.magnifyingglass
+    internal static let minus = Strings.tr("Localizable", "magnifyingglass.minus", fallback: "minus.magnifyingglass")
+    /// plus.magnifyingglass
+    internal static let plus = Strings.tr("Localizable", "magnifyingglass.plus", fallback: "plus.magnifyingglass")
+    /// arrow.up.left.and.down.right.magnifyingglass
+    internal static let scale = Strings.tr("Localizable", "magnifyingglass.scale", fallback: "arrow.up.left.and.down.right.magnifyingglass")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
