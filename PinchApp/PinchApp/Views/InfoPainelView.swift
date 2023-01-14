@@ -28,7 +28,7 @@ struct InfoPainelView: View {
             
             Spacer()
             
-            //
+            // MARK: - PAINEL
             HStack(spacing: 2) {
                 Image(systemName: Strings.Arrow.Two.diagonal)
                 Text("\(scale)")
