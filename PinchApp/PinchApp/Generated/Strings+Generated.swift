@@ -28,6 +28,14 @@ internal enum Strings {
     /// circle.circle
     internal static let circle = Strings.tr("Localizable", "circle.circle", fallback: "circle.circle")
   }
+  internal enum Magnifyingglass {
+    /// minus.magnifyingglass
+    internal static let minus = Strings.tr("Localizable", "magnifyingglass.minus", fallback: "minus.magnifyingglass")
+    /// plus.magnifyingglass
+    internal static let plus = Strings.tr("Localizable", "magnifyingglass.plus", fallback: "plus.magnifyingglass")
+    /// arrow.up.left.and.down.right.magnifyingglass
+    internal static let scale = Strings.tr("Localizable", "magnifyingglass.scale", fallback: "arrow.up.left.and.down.right.magnifyingglass")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
