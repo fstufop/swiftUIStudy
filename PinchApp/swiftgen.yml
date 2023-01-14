@@ -1,0 +1,30 @@
+input_dir: PinchApp
+output_dir: PinchApp/Generated/
+
+
+strings:
+   inputs:
+     - Resources/Localizable.strings
+   outputs:
+     - templateName: structured-swift5
+       output: Strings+Generated.swift
+       params:
+            enumName: "Strings"
+xcassets:
+   inputs:
+     - Resources/Assets.xcassets
+   outputs:
+     - templateName: swift5
+       params:
+         forceProvidesNamespaces: true
+       output: XCAssets+Generated.swift
+#/files:
+  #inputs:
+  #  - Resources/Sounds
+  #filter:
+  #  - .+\.mp3$
+  #  - .+\.m4a$
+  #outputs:
+  #  templateName: structured-swift5
+  #  output: Files+Generated.swift
+
