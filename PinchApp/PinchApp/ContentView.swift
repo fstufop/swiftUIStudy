@@ -66,6 +66,25 @@ struct ContentView: View {
                                     }
                                 }
                         )
+                        .gesture(
+                            MagnificationGesture()
+                                .onChanged{ size in
+                                    withAnimation(.linear(duration: 1)) {
+                                        if imageScale >= 1 && imageScale <= 5 {
+                                            imageScale = size
+                                        } else if imageScale > 5 {
+                                            imageScale = 5
+                                        }
+                                    }
+                                }
+                                .onEnded{ size in
+                                    if imageScale > 5 {
+                                        imageScale = 5
+                                    } else if imageScale <= 1 {
+                                        resetImagePosition()
+                                    }
+                                }
+                        )
                 }//: ZSTACK
                 
             }//: ZSTACK
