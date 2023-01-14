@@ -25,6 +25,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                Color.clear
+                
                 Image(asset: Asset.Thumbnails.thumbMagazineFrontCover)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -59,6 +61,10 @@ struct ContentView: View {
                                 }
                             }
                     )
+                // MARK: - LONGPRESS GESTURE
+                    .gesture(
+                        LongPressGesture()
+                    )
             }//: ZSTACK
             .navigationTitle(Strings.navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
@@ -67,6 +73,12 @@ struct ContentView: View {
                     isAnimating = true
                 }
             }//: ONAPPEAR
+            .overlay(
+                InfoPainelView(scale: imageScale, offset: imageOffset)
+                    .padding(.horizontal)
+                    .padding(.top, 30)
+                , alignment: .top
+            )
         }//: NAVIGATION
         .navigationViewStyle(.stack)
     }

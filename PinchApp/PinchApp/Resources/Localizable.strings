@@ -1,3 +1,9 @@
 //Common
 "appName" = "PinchApp";
 "navigationTitle"= "Pinch & Zoom";
+
+//SystemImage
+"circle.circle" = "circle.circle";
+"arrow.two.diagonal" = "arrow.up.left.and.arrow.down.right";
+"arrow.two.horizontal" = "arrow.left.and.right";
+"arrow.two.vertical" = "arrow.up.and.down";
