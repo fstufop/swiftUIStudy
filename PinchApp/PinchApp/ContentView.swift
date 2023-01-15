@@ -12,6 +12,11 @@ struct ContentView: View {
     @State private var isAnimating: Bool = false
     @State private var imageScale: CGFloat = 1
     @State private var imageOffset: CGSize = .zero
+    @State private var isDrawerOpen: Bool = false
+    
+    let pages: [Page] = pagesData
+    @State private var pageIndex: Int = 0
+    
     
     // MARK: - Methods
     func resetImagePosition() {
@@ -38,7 +43,7 @@ struct ContentView: View {
                 Color.clear
                 
                 ZStack {
-                    Image(asset: Asset.Thumbnails.thumbMagazineFrontCover)
+                    Image(asset: pages[pageIndex].image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .cornerRadius(10)
@@ -62,6 +67,26 @@ struct ContentView: View {
                                 }
                                 .onEnded { _ in
                                     if imageScale <= 1 {
+                                        resetImagePosition()
+                                    }
+                                }
+                        )
+                    // MARK: - MAGNIFICATION GESTURE
+                        .gesture(
+                            MagnificationGesture()
+                                .onChanged{ size in
+                                    withAnimation(.linear(duration: 1)) {
+                                        if imageScale >= 1 && imageScale <= 5 {
+                                            imageScale = size
+                                        } else if imageScale > 5 {
+                                            imageScale = 5
+                                        }
+                                    }
+                                }
+                                .onEnded{ size in
+                                    if imageScale > 5 {
+                                        imageScale = 5
+                                    } else if imageScale <= 1 {
                                         resetImagePosition()
                                     }
                                 }
@@ -124,6 +149,45 @@ struct ContentView: View {
                     .padding(.bottom, 30)
                     .tint(.primary)
                 ,alignment: .bottom)
+            // MARK: - DRAWER
+            .overlay(
+                HStack(spacing: 12) {
+                    Image(systemName: isDrawerOpen ? Strings.Chevron.Compact.right : Strings.Chevron.Compact.left)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 40)
+                        .padding(8)
+                        .foregroundColor(.secondary)
+                        .onTapGesture {
+                            withAnimation(.easeOut) {
+                                isDrawerOpen.toggle()
+                            }
+                        }
+                    
+                    ForEach(pages) { page in
+                        Image(asset: page.thumbnails)
+                            .resizable()
+                            .scaledToFit()
+                            .cornerRadius(8)
+                            .shadow(radius: 4)
+                            .onTapGesture {
+                                withAnimation(.easeOut) {
+                                    pageIndex = page.id
+                                }
+                            }
+                    }
+                    
+                    Spacer()
+                }//: DRAWER
+                    .padding(EdgeInsets(top: 16, leading: 8, bottom: 16, trailing: 8))
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(8)
+                    .opacity(isAnimating ? 1 : 0)
+                    .frame(width: 260)
+                    .padding(.top, UIScreen.main.bounds.height / 12)
+                    .offset(x: isDrawerOpen ? 20 : 215)
+                , alignment: .topTrailing
+            )
             
         }//: NAVIGATION
         .navigationViewStyle(.stack)

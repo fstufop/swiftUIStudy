@@ -10,3 +10,5 @@
 "magnifyingglass.minus" = "minus.magnifyingglass";
 "magnifyingglass.plus" = "plus.magnifyingglass";
 "magnifyingglass.scale" = "arrow.up.left.and.down.right.magnifyingglass";
+"chevron.compact.right" = "chevron.compact.right";
+"chevron.compact.left" = "chevron.compact.left";
